@@ -42,7 +42,7 @@ function Fproblem3(props) {
     event.preventDefault();
     console.log(text);
     axios
-      .post("http://localhost:9002/problem1", { text })
+      .post("http://localhost:5000/problem1", { text })
       .then((response) => {
         console.log("Text saved successfully");
         setShowMenu(true);
@@ -79,7 +79,7 @@ function Fproblem3(props) {
         <h2>Timer: {hours}h {minutes}m {seconds}s</h2>
         {!showMenu ? (
           <div className="problem">
-              <h2 className="subtitle">
+          <h2 className="subtitle">
             Write a Python program that accepts a sequence of comma-separated
             numbers from the user and generates a list and a tuple of those
             numbers
@@ -88,28 +88,29 @@ function Fproblem3(props) {
             Sample data : 3, 5, 7, 23 <br></br> List : ['3', ' 5', ' 7', ' 23']
             Tuple : ('3', ' 5', ' 7', ' 23')
           </p>
-          </div>
-        ) : (
-          <div className="menu">
-            <h2>Result</h2>
-            <p>Congratulations! Your code is correct.</p>
-            <button onClick={handleMenuClick}>Close</button>
-          </div>
-        )}
-        <div className="editor">
-          <div className="editor-title">Output</div>
-          <form onSubmit={handleSubmit}>
-            <textarea 
-             className="editor-textarea"
-             placeholder="Write your result here..."
-             value={text} onChange={handleChange}
-              />
-            <button type="submit">Submit</button>
-          </form>
         </div>
-      </div>
-    </body>
-  );
-}
-
-export default Fproblem3;
+          ) : (
+            <div className="menu">
+              <h2>Result</h2>
+              <p>Congratulations! Your code is correct.</p>
+              <button onClick={handleMenuClick}>Close</button>
+            </div>
+          )}
+          <div className="editor">
+            <div className="editor-title">Output</div>
+            <form onSubmit={handleSubmit}>
+              <textarea 
+               className="editor-textarea"
+               placeholder="Write your result here..."
+               value={text} onChange={handleChange}
+                />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </body>
+    );
+  }
+  
+  export default Fproblem3;
+  

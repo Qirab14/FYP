@@ -42,7 +42,7 @@ function Fproblem2(props) {
     event.preventDefault();
     console.log(text);
     axios
-      .post("http://localhost:9002/problem1", { text })
+      .post("http://localhost:5000/problem1", { text })
       .then((response) => {
         console.log("Text saved successfully");
         setShowMenu(true);
@@ -79,32 +79,34 @@ function Fproblem2(props) {
         <h2>Timer: {hours}h {minutes}m {seconds}s</h2>
         {!showMenu ? (
           <div className="problem">
-             <h2 className="subtitle">Write a function that returns the sum of two numbers</h2>
+               <h2 className="subtitle">
+                Write a function that returns the sum of two numbers</h2>
           <p className="description">
             Given two numbers, return their sum. You may assume that the input is always valid.
           </p>
-          </div>
-        ) : (
-          <div className="menu">
-            <h2>Result</h2>
-            <p>Congratulations! Your code is correct.</p>
-            <button onClick={handleMenuClick}>Close</button>
-          </div>
-        )}
-        <div className="editor">
-          <div className="editor-title">Output</div>
-          <form onSubmit={handleSubmit}>
-            <textarea 
-             className="editor-textarea"
-             placeholder="Write your result here..."
-             value={text} onChange={handleChange}
-              />
-            <button type="submit">Submit</button>
-          </form>
         </div>
-      </div>
-    </body>
-  );
-}
-
-export default Fproblem2;
+          ) : (
+            <div className="menu">
+              <h2>Result</h2>
+              <p>Congratulations! Your code is correct.</p>
+              <button onClick={handleMenuClick}>Close</button>
+            </div>
+          )}
+          <div className="editor">
+            <div className="editor-title">Output</div>
+            <form onSubmit={handleSubmit}>
+              <textarea 
+               className="editor-textarea"
+               placeholder="Write your result here..."
+               value={text} onChange={handleChange}
+                />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </body>
+    );
+  }
+  
+  export default Fproblem2;
+  
