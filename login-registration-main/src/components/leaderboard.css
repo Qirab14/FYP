@@ -1,0 +1,140 @@
+/* kudos.css */
+
+.l-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.c-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.c-logo {
+  height: 2.5rem;
+}
+
+.c-button {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
+
+.l-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.l-grid__item--sticky {
+  position: sticky;
+  top: 5rem;
+}
+
+.c-card {
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+}
+
+.c-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.c-card__header h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.c-select {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f2f2f2;
+}
+
+.c-card__body {
+  padding: 1.5rem;
+}
+
+.u-bg--light-gradient {
+  background: linear-gradient(to right, #5f2c82, #49a09d);
+  color: white;
+}
+
+.u-text--dark {
+  color: #222;
+}
+
+.u-display--flex {
+  display: flex;
+}
+
+.u-justify--space-between {
+  justify-content: space-between;
+}
+
+.u-text--left {
+  text-align: left;
+}
+
+.u-text--right {
+  text-align: right;
+}
+
+.u-text--center {
+  text-align: center;
+}
+
+.u-text--small {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.u-text--medium {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.c-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c-list__item {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 1rem 0;
+}
+
+.c-list__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.c-list__grid div {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .l-grid {
+    display: block;
+  }
+
+  .l-grid__item--sticky {
+    position: static;
+  }
+}

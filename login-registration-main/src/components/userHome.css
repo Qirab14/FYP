@@ -1,0 +1,185 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 5px grey;
+    background: white;
+    /* position: relative */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+body {
+    overflow-x: hidden;
+    background-color: #f2f2f2;
+  }
+  
+
+.homepage > .button {
+    background: #1877f2;
+    border: 1px solid #1877f2;
+    color: #fff;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    align-items: center;
+}/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  header {
+    background-color: #ffffff;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    color: #006699;
+  }
+  
+  button {
+    background-color: #006699;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-left: 30px;
+  }
+  
+  button:hover {
+    background-color: #00557d;
+  }
+  
+  .header-content {
+    margin-top: 50px;
+  }
+  
+  .header-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  
+  .header-content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #f2f2f2;
+  }
+  
+  .featured-problems h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .featured-problems ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 40px;
+  }
+  
+  .featured-problems li {
+    flex-basis: calc(33.33% - 20px);
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .featured-problems li:hover {
+    transform: translateY(-5px);
+  }
+  
+  .problem-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .problem-difficulty {
+    font-size: 1.2rem;
+    color: #005681;
+  }
+  
+  .practice-problems h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .practice-problems ul {
+    list-style: none;
+    margin-bottom: 40px;
+  }
+  
+  .practice-problems li {
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  
