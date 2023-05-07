@@ -87,7 +87,7 @@ function Fproblem5(props) {
           ) : (
             <div className="menu">
               <h2>Result</h2>
-              <p>Congratulations!acga Your code is correct.</p>
+              <p>Congratulations! Your code is correct.</p>
               <button onClick={handleMenuClick}>Close</button>
             </div>
           )}

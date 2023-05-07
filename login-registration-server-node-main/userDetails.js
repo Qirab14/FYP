@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
-
-const UserDetailsScehma = new mongoose.Schema(
+const UserDetailsSchema = new mongoose.Schema(
   {
     fname: String,
     lname: String,
-    qualification: String,
+    qname: String,
     email: { type: String, unique: true },
     password: String,
     userType: String,
@@ -14,4 +13,4 @@ const UserDetailsScehma = new mongoose.Schema(
   }
 );
 
-mongoose.model("UserInfo", UserDetailsScehma);
+mongoose.model("UserInfo", UserDetailsSchema);

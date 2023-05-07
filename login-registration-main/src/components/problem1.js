@@ -8,7 +8,8 @@ function Problem1(props) {
   const [seconds, setSeconds] = useState(0);
   const intervalRef = useRef(null);
   const [showMenu, setShowMenu] = useState(false);
-  const [text, setText] = useState('');
+  const [userAnswer, setUserAnswer] = useState("");
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
 
   function startTimer() {
     intervalRef.current = setInterval(() => {
@@ -34,31 +35,32 @@ function Problem1(props) {
     clearInterval(intervalRef.current);
   }
 
-  function handleChange(event) {
-    setText(event.target.value);
+  function handleAnswerChange(event) {
+    setUserAnswer(event.target.value);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(text);
     axios
-      .post("http://localhost:5000/problem1", { text })
+      .post("http://localhost:5000/problem1", { userAnswer })
       .then((response) => {
-        console.log("Text saved successfully");
+        const isAnswerCorrect = response.data.isAnswerCorrect;
+        setIsAnswerCorrect(isAnswerCorrect);
         setShowMenu(true);
         stopTimer();
       })
       .catch((error) => {
-        console.error("Error saving text", error);
+        console.error("Error saving answer", error);
       });
   }
 
   function handleMenuClick() {
     setShowMenu(false);
+    setIsAnswerCorrect(null);
     setHours(0);
     setMinutes(0);
     setSeconds(0);
-    setText("");
+    setUserAnswer("");
   }
 
   return (
@@ -67,13 +69,7 @@ function Problem1(props) {
         <div className="header">
           <h1 className="title">Coding Problem</h1>
           <div className="buttons">
-          <a
-              href="https://www.programiz.com/python-programming/online-compiler/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button onClick={startTimer}>Start</button>
-            </a>
+            <button onClick={startTimer}>Start</button>
           </div>
         </div>
         <h2>Timer: {hours}h {minutes}m {seconds}s</h2>
@@ -87,7 +83,11 @@ function Problem1(props) {
         ) : (
           <div className="menu">
             <h2>Result</h2>
-            <p>Congratulations! Your code is correct.</p>
+            {isAnswerCorrect ? (
+              <p>Congratulations! Your code is correct.</p>
+            ) : (
+              <p>Sorry, your code is incorrect.</p>
+            )}
             <button onClick={handleMenuClick}>Close</button>
           </div>
         )}
@@ -97,7 +97,7 @@ function Problem1(props) {
             <textarea 
              className="editor-textarea"
              placeholder="Write your result here..."
-             value={text} onChange={handleChange}
+             value={userAnswer} onChange={handleAnswerChange}
               />
             <button type="submit">Submit</button>
           </form>

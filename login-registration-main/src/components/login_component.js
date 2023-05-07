@@ -3,6 +3,7 @@ import React, { Component, useState } from "react";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,12 +25,14 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data.status == "ok") {
+        if (data.status === "ok") {
           alert("login successful");
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
 
           window.location.href = "./userDetails";
+        } else {
+          setErrorMessage("Incorrect email or password");
         }
       });
   }
@@ -59,6 +62,8 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+
+          {errorMessage && <div className="text-danger">{errorMessage}</div>}
 
           <div className="mb-3">
             <div className="custom-control custom-checkbox">
