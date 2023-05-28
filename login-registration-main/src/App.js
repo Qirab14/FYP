@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Login from "./components/login_component";
 import SignUp from "./components/signup_component";
+import Chatroom from "./components/chatroom";
+import Chat from "./components/chat";
 import UserDetails from "./components/userDetails";
 import Leaderboard from "./components/leaderboard";
 import GeneralProblem from "./components/generalProblem";
@@ -40,6 +42,8 @@ function App() {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/GeneralProblem" element={<GeneralProblem />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/chatroom" element={<Chatroom />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="/userDetails" element={<UserDetails />} />
         </Routes>
         {/* <ImageUpload/> */}

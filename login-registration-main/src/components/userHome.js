@@ -17,6 +17,7 @@ export default function UserHome({ userData }) {
                     <li><a href="#">Contests</a></li>
                     <li><Link to="/leaderboard">Leaderboard</Link></li>
                     <li><a href="#">Practice</a></li>
+                    <li><Link to="/chatroom">Chat Room</Link></li>
                   </ul>
                  
                   <button onClick={logOut} >

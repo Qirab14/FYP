@@ -43,12 +43,13 @@ html,
   justify-content: center;
   flex-direction: column;
   text-align: left;
+  background-image: url(/public/coder.jpg);
 }
 
 .auth-inner {
   width: 450px;
   margin: auto;
-  background: #ffffff;
+  background: #c9baba;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
@@ -88,4 +89,7 @@ table,
 th,
 td {
   border: 1px solid black !important;
+}
+button.incorrect {
+  transition: margin-left 0.3s ease;
 }

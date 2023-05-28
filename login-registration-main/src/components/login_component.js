@@ -1,4 +1,5 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -38,7 +39,9 @@ export default function Login() {
   }
 
   return (
-    <div className="auth-wrapper">
+    <div
+      className="auth-wrapper"
+    >
       <div className="auth-inner">
         <form onSubmit={handleSubmit}>
           <h3>Sign In</h3>
@@ -79,9 +82,7 @@ export default function Login() {
           </div>
 
           <div className="d-grid">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
+            <button type="submit">Submit</button>
           </div>
           <p className="forgot-password text-right">
             <a href="/sign-up">Sign Up</a>
